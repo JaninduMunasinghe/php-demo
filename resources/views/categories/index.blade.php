@@ -78,13 +78,15 @@
                 </div>
                 Add Products
               </a>
+              <a class="nav-link"  href="{{ route('product.index') }}">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                All Products
+              </a>
               <a class="nav-link" href="{{route('category.create')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                 Add Category
-              </a>
-              <a class="nav-link" href="{{route('category.index')}}">
-                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                All Category
               </a>
             </div>
           </div>
@@ -93,7 +95,7 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Products</h1>
+            <h1 class="mt-4">Categories</h1>
             <div class="card mb-4">
 
               <div class="card-body">
@@ -101,26 +103,22 @@
                   <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Name</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
+                      <th>Category Name</th>
                       <th>Description</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                     <tbody>
-                        @foreach($products as $product)
+                        @foreach($categories as $category)
                         <tr>
-                        <td>{{$product->id}}</td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->qty}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->description}}</td>
+                        <td>{{$category->id}}</td>
+                        <td>{{$category->name}}</td>
+                        <td>{{$category->description}}</td>
                         <td class="action-buttons">
                             
-                            <a href="{{route('product.edit', $product->id)}}"
+                            <a href="{{route('category.edit', $category->id)}}"
                             class="btn btn-warning btn-sm">Edit</a>
-                            <form method="post" action="{{ route('product.delete', ['product' => $product]) }}" class="form-delete">
+                            <form method="post" action="{{ route('category.delete', ['category' => $category]) }}" class="form-delete">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

@@ -70,6 +70,14 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                 All Products
               </a>
+              <a class="nav-link" href="{{route('category.create')}}">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Add Category
+              </a>
+              <a class="nav-link" href="{{route('category.index')}}">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                All Category
+              </a>
             </div>
           </div>
         </nav>

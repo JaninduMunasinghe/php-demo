@@ -60,13 +60,15 @@
               <div class="sb-sidenav-menu-heading">Interface</div>
               <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion"></div>
               <div class="sb-sidenav-menu-heading">Addons</div>
+              <a class="nav-link" href="{{ route('product.create') }}">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                Add Products
+              </a>
               <a class="nav-link" href="{{route('product.index')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                 All Products
-              </a>
-              <a class="nav-link" href="{{route('category.create')}}">
-                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Add Category
               </a>
               <a class="nav-link" href="{{route('category.index')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -79,40 +81,23 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h2 class="mt-4 text-center">ADD PRODUCTS</h2>
-            <!-- product add form -->
+            <h2 class="mt-4 text-center">ADD CATEGORY</h2>
+            <!-- category add form -->
             <div class="form-container">
              
-              <form method="post" action="{{ route('product.store') }}">
+              <form method="post" action="{{ route('category.store') }}">
                 @csrf
                 @method('post')
                 <div class="form-group">
-                  <label for="name">Name</label>
+                  <label for="name">Category Name</label>
                   <input type="text" class="form-control" id="name" name="name"  required>
                 </div>
-                <div class="form-group">
-                  <label for="qty">Quantity</label>
-                  <input type="number" class="form-control" id="qty" name="qty"  required>
-                </div>
-                <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" name="price"  required>
-                </div>
-                <div class="form-group">
-                <label for="exampleFormControlSelect1">Select Category</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-                  @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                  @endforeach
-                </select>
-              </div>
                 <div class="form-group">
                   <label for="description">Description</label>
                   <textarea class="form-control" id="description" name="description"  rows="3" required></textarea>
                 </div>
-                
                 <div class="text-right">
-                  <input type="submit" class="btn btn-success" value="Save New Product">
+                  <input type="submit" class="btn btn-success" value="Save New Category">
                 </div>
               </form>
               

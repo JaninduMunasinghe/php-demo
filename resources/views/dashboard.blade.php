@@ -17,7 +17,7 @@
             <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Total Orders</div>
+                                    <div class="card-body">Total Products</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="{{route('product.index')}}">120</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Overdue Products</div>
+                                    <div class="card-body">Overdue Orders</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">5</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
